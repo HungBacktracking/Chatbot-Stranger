@@ -60,7 +60,7 @@ app.use(cors());
 
 // index
 app.get('/', function(req, res) {
-	res.send('World')
+	res.send('World Final')
 })
 
 // for facebook verification
