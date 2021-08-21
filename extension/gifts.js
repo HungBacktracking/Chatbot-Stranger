@@ -36,7 +36,7 @@ var getFactData = function(callback) {
 	callback({
 		"attachment":{"type":"text",
 		"payload":{
-			text
+			"text": text
 		}}
 	});
 }
