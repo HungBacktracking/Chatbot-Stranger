@@ -12,8 +12,10 @@ const facebook = require('../facebook');
 }*/
 
 function sendFacts(id, id2, notInChat) {
-
-	var data={"text": "Fact"} 
+	var val=randomIntFromInterval(1,3);
+	if (val==1) var data={"text": "Hoàng Hưng là huyền thoại của Lê Quý Đôn"} 
+	if (val==2) var data={"text": "Hí ae là Hưng đây"}
+	if (val==3) var data={"text": "Em an com chua?"} 
 	
 	if (notInChat) data["quick_replies"] = facebook.quickbtns;
 	//else data["quick_replies"] = facebook.quickbtns_mini;
