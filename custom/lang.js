@@ -28,12 +28,13 @@ module.exports = {
 				"- trogiup: Xem trợ giúp\n"+
 				"- meow: Xem ảnh mèo\n"+
 				"- gauw: Xem ảnh cún\n"+
+				"- club: Tìm hiểu các câu lạc bộ trong trường\n"+
+				"- fact: Một điều thú vị về ngôi trường thiên thanh"+
 				"\nCác lệnh có thể dùng khi đang không chat:\n"+
 				"- tim nu: Tìm nữ chat cùng\n"+
 				"- tim nam: Tìm nam chat cùng\n"+
-				"- chatcungbot: Trò chuyện với bot\n"+
-				"- clb: Tìm hiểu các câu lạc bộ trong trường\n"+
-				"- fact: Một điều thú vị về ngôi trường thiên thanh",
+				"- chatcungbot: Trò chuyện với bot\n",
+				
 
 	KEYWORD_BATDAU : 'batdau',
 	KEYWORD_KETTHUC : 'ketthuc',
@@ -42,7 +43,7 @@ module.exports = {
 	KEYWORD_CAT : 'meow',
 	KEYWORD_DOG : 'gauw',
 	KEYWORD_BOT : 'chatcungbot',
-	KEYWORD_CLB : 'clb',
+	KEYWORD_CLUB : 'club',
 	KEYWORD_FACT: 'fact',
 
 	ERR_200: '[Chatbot] Bạn chat không thể nhận tin nhắn do đã xóa inbox hoặc block page.',
