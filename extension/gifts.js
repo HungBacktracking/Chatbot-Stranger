@@ -1,15 +1,24 @@
 var MAX_CAT_IMG = 10229;
 var MAX_DOG_IMG = 5250;
-var MAX_FACT =30;
 const facebook = require('../facebook');
 
-function sendFacts(id, id2, notInChat) {
+/*function sendFacts(id, id2, notInChat) {
 	getFactData(function(data) {
 		if (notInChat) data["quick_replies"] = facebook.quickbtns;
 		//else data["quick_replies"] = facebook.quickbtns_mini;
 		facebook.sendFacebookApi(id, id, data, {});
 		if (id2 != null) facebook.sendFacebookApi(id2, id2, data, {});
 	});
+}*/
+
+function sendFacts(id, id2, notInChat) {
+
+	var data={"text": "Fact"} 
+	
+	if (notInChat) data["quick_replies"] = facebook.quickbtns;
+	//else data["quick_replies"] = facebook.quickbtns_mini;
+	facebook.sendFacebookApi(id, id, data, {});
+	if (id2 != null) facebook.sendFacebookApi(id2, id2, data, {});
 }
 
 function sendCatPic(id, id2, notInChat) {
@@ -31,15 +40,15 @@ function sendDogPic(id, id2, notInChat) {
 	});
 }
 
-var getFactData = function(callback) {
-	var text='Hoàng Hưng là huyền thoại Lê Quý Đôn';
+/*var getFactData = function(callback) {
+	var text='Hello World';
 	callback({
 		"attachment":{"type":"text",
 		"payload":{
 			"text": text
 		}}
 	});
-}
+}*/
 
 var getCatData = function(callback) {
 	var img=randomIntFromInterval(1,MAX_CAT_IMG);
