@@ -2,16 +2,16 @@ var MAX_CAT_IMG = 10229;
 var MAX_DOG_IMG = 5250;
 const facebook = require('../facebook');
 
-function sendFacts(id, id2, notInChat) {
+/*function sendFacts(id, id2, notInChat) {
 	getFactData(function(data) {
 		if (notInChat) data["quick_replies"] = facebook.quickbtns;
 		//else data["quick_replies"] = facebook.quickbtns_mini;
 		facebook.sendFacebookApi(id, id, data, {});
 		if (id2 != null) facebook.sendFacebookApi(id2, id2, data, {});
 	});
-}
+}*/
 
-/*function sendFacts(id, id2, notInChat) {
+function sendFacts(id, id2, notInChat) {
 
 	var data={"text": "Fact"} 
 	
@@ -19,7 +19,7 @@ function sendFacts(id, id2, notInChat) {
 	//else data["quick_replies"] = facebook.quickbtns_mini;
 	facebook.sendFacebookApi(id, id, data, {});
 	if (id2 != null) facebook.sendFacebookApi(id2, id2, data, {});
-}*/
+}
 
 function sendCatPic(id, id2, notInChat) {
 	getCatData(function(data) {
@@ -40,7 +40,7 @@ function sendDogPic(id, id2, notInChat) {
 	});
 }
 
-var getFactData = function(callback) {
+/*var getFactData = function(callback) {
 	var text='Hello World';
 	callback({
 		"attachment":{"type":"text",
@@ -48,7 +48,7 @@ var getFactData = function(callback) {
 			"text": text
 		}}
 	});
-}
+}*/
 
 var getCatData = function(callback) {
 	var img=randomIntFromInterval(1,MAX_CAT_IMG);
@@ -86,7 +86,7 @@ module.exports = {
 	sendFacts: sendFacts,
 	sendCatPic: sendCatPic,
 	sendDogPic: sendDogPic,
-	getFactData: getFactData,
+	//getFactData: getFactData,
 	getCatData: getCatData,
 	getDogData: getDogData
 };
