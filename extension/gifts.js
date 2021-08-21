@@ -74,8 +74,10 @@ var getDogData = function(callback) {
 }
 
 module.exports = {
+	sendFacts: sendFacts,
 	sendCatPic: sendCatPic,
 	sendDogPic: sendDogPic,
+	getFactData: getFactData,
 	getCatData: getCatData,
 	getDogData: getDogData
 };
