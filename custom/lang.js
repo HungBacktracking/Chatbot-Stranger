@@ -4,13 +4,13 @@
 module.exports = {
 	BAO_TRI : "[Chatbot] Server hiện đang bảo trì. Mình sẽ sớm kết nối lại và thông báo cho các bạn.",
 	FIRST_COME : '[Chatbot] Chào mừng bạn đến với Chatbot LQĐ. Trước khi bắt đầu, hãy chắc chắn rằng bạn đã chọn đúng giới tính người muốn chat cùng. Ấn trợ giúp (hoặc gửi trogiup) để xem thêm.',
-	HUONG_DAN : "[Chatbot] Gửi batdau hoặc bấm vào nút để tìm bạn chat.",
+	HUONG_DAN : "[Chatbot] Gửi batdau để tìm bạn chat hoặc trogiup để xem các tùy chọn khác.",
 	BATDAU_OKAY : "[Chatbot] OK! Chúng mình sẽ thông báo khi tìm được \"đối phương\".",
 	BATDAU_WARN_GENDER : "[Chatbot] Lưu ý: Bạn không chọn giới tính. Có thể bạn sẽ phải đợi lâu hơn.",
 	BATDAU_ERR_ALREADY : "[Chatbot] Bạn không thể batdau khi chưa ketthuc...",
 	WAITING : "[Chatbot] Đang tìm bạn chat...",
 	START_CHAT : "[Chatbot] Connected! Nếu muốn kết thúc, hãy gửi ketthuc\nChúc 2 bạn nói chuyện vui vẻ :)",
-	END_CHAT : "[Chatbot] End chat! \nGửi batdau hoặc bấm vào nút để tìm bạn chat.",
+	END_CHAT : "[Chatbot] End chat! \nGửi batdau để tìm bạn chat hoặc trogiup để xem các tùy chọn khác.",
 	END_CHAT_FORCE : "[Chatbot] Hiện tại không có ai đang online cả. Bạn hãy thử lại sau nhé :(",
 	ERR_UNKNOWN : "[Chatbot] Server xảy ra lỗi nhưng ko nghiêm trọng lắm\nHãy gửi ketthuc để thoát ra và thử lại",
 	ERR_ATTACHMENT : "[Chatbot] Lỗi: chúng mình chưa hỗ trợ gửi dạng dữ liệu này",
@@ -30,7 +30,10 @@ module.exports = {
 				"- gauw: Xem ảnh cún\n"+
 				"\nCác lệnh có thể dùng khi đang không chat:\n"+
 				"- tim nu: Tìm nữ chat cùng\n"+
-				"- tim nam: Tìm nam chat cùng",
+				"- tim nam: Tìm nam chat cùng\n"+
+				"- chatcungbot: Trò chuyện với bot\n"+
+				"- clb: Tìm hiểu các câu lạc bộ trong trường\n"+
+				"- fact: Một điều thú vị về ngôi trường thiên thanh",
 
 	KEYWORD_BATDAU : 'batdau',
 	KEYWORD_KETTHUC : 'ketthuc',
@@ -38,6 +41,9 @@ module.exports = {
 	KEYWORD_HELP : 'trogiup',
 	KEYWORD_CAT : 'meow',
 	KEYWORD_DOG : 'gauw',
+	KEYWORD_BOT : 'chatcungbot',
+	KEYWORD_CLB : 'clb',
+	KEYWORD_FACT: 'fact',
 
 	ERR_200: '[Chatbot] Bạn chat không thể nhận tin nhắn do đã xóa inbox hoặc block page.',
 	ERR_10: '[Chatbot] Bạn chat không thể nhận tin nhắn do 2 bạn không nói chuyện gì trong vòng 24h. Gửi ketthuc để kết thúc chat.',
