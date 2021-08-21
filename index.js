@@ -316,8 +316,8 @@ var sendButtonMsg = function(sender, txt, showStartBtn, showHelpBtn, showRpBtn =
 
 var sendMessage = function(sender, receiver, data) {
 	var messageData = {
-		text: data.text,
-		"quick_replies":facebook.quickbtns_mini
+		text: data.text
+		//"quick_replies":facebook.quickbtns_mini
 	};
 
 	if (data.attachments) {

@@ -75,6 +75,18 @@ exports.quickbtns = [
     "payload":la.KEYWORD_GENDER+'nu'
   },{
     "content_type":"text",
+    "title":"chat với bot",
+    "payload":la.KEYWORD_BOT
+  },{
+    "content_type":"text",
+    "title":"câu lạc bộ",
+    "payload":la.KEYWORD_CLUB
+  },{
+    "content_type":"text",
+    "title":"xem facts",
+    "payload":la.KEYWORD_FACT
+  },{
+    "content_type":"text",
     "title":"meow",
     "payload":la.KEYWORD_CAT
   },{
