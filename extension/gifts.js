@@ -1,5 +1,6 @@
 var MAX_CAT_IMG = 10229;
 var MAX_DOG_IMG = 5250;
+var MAX_FACT =30;
 const facebook = require('../facebook');
 
 function sendCatPic(id, id2, notInChat) {
@@ -10,6 +11,7 @@ function sendCatPic(id, id2, notInChat) {
 		if (id2 != null) facebook.sendFacebookApi(id2, id2, data, {});
 	});
 }
+
 
 function sendDogPic(id, id2, notInChat) {
 	getDogData(function(data) {
