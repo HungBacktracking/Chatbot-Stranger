@@ -3,6 +3,15 @@ var MAX_DOG_IMG = 5250;
 var MAX_FACT =30;
 const facebook = require('../facebook');
 
+function sendFacts(id, id2, notInChat) {
+	getFactData(function(data) {
+		if (notInChat) data["quick_replies"] = facebook.quickbtns;
+		//else data["quick_replies"] = facebook.quickbtns_mini;
+		facebook.sendFacebookApi(id, id, data, {});
+		if (id2 != null) facebook.sendFacebookApi(id2, id2, data, {});
+	});
+}
+
 function sendCatPic(id, id2, notInChat) {
 	getCatData(function(data) {
 		if (notInChat) data["quick_replies"] = facebook.quickbtns;
@@ -19,6 +28,16 @@ function sendDogPic(id, id2, notInChat) {
 		//else data["quick_replies"] = facebook.quickbtns_mini;
 		facebook.sendFacebookApi(id, id, data, {});
 		if (id2 != null) facebook.sendFacebookApi(id2, id2, data, {});
+	});
+}
+
+var getFactData = function(callback) {
+	var text='Hoàng Hưng là huyền thoại Lê Quý Đôn';
+	callback({
+		"attachment":{"type":"text",
+		"payload":{
+			text
+		}}
 	});
 }
 

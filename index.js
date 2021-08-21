@@ -133,6 +133,8 @@ app.post('/webhook/', function(req, res) {
 							gifts.sendCatPic(sender, null, true);
 						} else if (command === la.KEYWORD_DOG) {
 							gifts.sendDogPic(sender, null, true);
+						} else if (command === la.KEYWORD_FACT) {
+							gifts.sendFacts(sender, null, true);
 						} else if (!event.read) {
 							sendButtonMsg(sender, la.HUONG_DAN, true, true);
 						}
@@ -147,6 +149,8 @@ app.post('/webhook/', function(req, res) {
 							sendButtonMsg(sender, la.HELP_TXT, false, false);
 						} else if (command === la.KEYWORD_CAT) {
 							gifts.sendCatPic(sender, null, true);
+						} else if (command === la.KEYWORD_FACT) {
+							gifts.sendFacts(sender, null, true);
 						} else if (command === la.KEYWORD_DOG) {
 							gifts.sendDogPic(sender, null, true);
 						} else if (!event.read) {
@@ -168,6 +172,9 @@ app.post('/webhook/', function(req, res) {
 						} else if (command === la.KEYWORD_DOG) {
 							sendMessage(sender, sender2, event.message);
 							gifts.sendDogPic(sender, sender2, false);
+						} else if (command === la.KEYWORD_FACT) {
+							sendMessage(sender, sender2, event.message);
+							gifts.sendFacts(sender, sender2, false);
 						} else {
 							if (event.read) {
 								facebook.sendSeenIndicator(sender2);
