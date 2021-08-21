@@ -5,7 +5,7 @@ module.exports = {
 	BAO_TRI : "[Chatbot] Server hiện đang bảo trì. Mình sẽ sớm kết nối lại và thông báo cho các bạn.",
 	FIRST_COME : '[Chatbot] Chào mừng bạn đến với Chatbot LQĐ. Trước khi bắt đầu, hãy chắc chắn rằng bạn đã chọn đúng giới tính người muốn chat cùng. Ấn trợ giúp (hoặc gửi trogiup) để xem thêm.',
 	HUONG_DAN : "[Chatbot] Gửi batdau hoặc bấm vào nút để tìm bạn chat.",
-	BATDAU_OKAY : "[Chatbot] OK! Chúng mình sẽ thông báo khi tìm được \"đối tượng\".",
+	BATDAU_OKAY : "[Chatbot] OK! Chúng mình sẽ thông báo khi tìm được \"đối phương\".",
 	BATDAU_WARN_GENDER : "[Chatbot] Lưu ý: Bạn không chọn giới tính. Có thể bạn sẽ phải đợi lâu hơn.",
 	BATDAU_ERR_ALREADY : "[Chatbot] Bạn không thể batdau khi chưa ketthuc...",
 	WAITING : "[Chatbot] Đang tìm bạn chat...",

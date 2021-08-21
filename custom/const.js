@@ -25,7 +25,7 @@ module.exports = {
 
 	//OTHERS
 	//(không bắt buộc) Cách bật tính năng hiện đã xem (seen): https://goo.gl/xjw9nP
-	MAX_PEOPLE_WAITROOM : 7, //Số người tối đa trong phòng chờ
+	MAX_PEOPLE_WAITROOM : 100, //Số người tối đa trong phòng chờ
 	MAX_WAIT_TIME_MINUTES : 0, //Số phút tối đa 1 người đc phép trong phòng chờ.
 	                            //Đặt 0 để cho phép đợi bao lâu cũng đc
 
