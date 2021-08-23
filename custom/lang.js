@@ -9,7 +9,7 @@ module.exports = {
 	BATDAU_WARN_GENDER : "[Chatbot] Lưu ý: Bạn không chọn giới tính. Có thể bạn sẽ phải đợi lâu hơn.",
 	BATDAU_ERR_ALREADY : "[Chatbot] Bạn không thể batdau khi chưa ketthuc...",
 	WAITING : "[Chatbot] Đang tìm bạn chat...",
-	START_CHAT : "[Chatbot] Connected! Nếu muốn kết thúc, hãy gửi ketthuc\nChúc 2 bạn nói chuyện vui vẻ :)",
+	START_CHAT : "[Chatbot] Connected! Nếu muốn kết thúc, hãy gửi ketthuc\nChúc 2 bạn nói chuyện vui vẻ :>",
 	END_CHAT : "[Chatbot] End chat! \nGửi batdau để tìm bạn chat hoặc trogiup để xem các tùy chọn khác.",
 	END_CHAT_FORCE : "[Chatbot] Hiện tại không có ai đang online cả. Bạn hãy thử lại sau nhé :(",
 	ERR_UNKNOWN : "[Chatbot] Server xảy ra lỗi nhưng ko nghiêm trọng lắm\nHãy gửi ketthuc để thoát ra và thử lại",
@@ -23,17 +23,17 @@ module.exports = {
 	GENDER_WRITE_WARN : "\n\nLưu ý: Tùy chọn này chỉ có tác dụng với PHẦN LỚN các cuộc nói chuyện.",
 	GENDER_ARR : ['không quan tâm', 'nam', 'nữ'],
 	HELP_TXT : "[Chatbot] Danh sách các lệnh:\n" +
-				"- batdau: Bắt đầu tìm bạn chat\n"+
 				"- ketthuc: Kết thúc chat\n"+
 				"- trogiup: Xem trợ giúp\n"+
+				"- club: Các câu lạc bộ\n"+
+				"- fact: Một thú vị nhỏ\n"+
 				"- meow: Xem ảnh mèo\n"+
 				"- gauw: Xem ảnh cún\n"+
-				"- club: Tìm hiểu các câu lạc bộ trong trường\n"+
-				"- fact: Một điều thú vị về ngôi trường thiên thanh"+
-				"\nCác lệnh có thể dùng khi đang không chat:\n"+
-				"- tim nu: Tìm nữ chat cùng\n"+
-				"- tim nam: Tìm nam chat cùng\n"+
-				"- chatcungbot: Trò chuyện với bot\n",
+				"Các lệnh có thể dùng khi đang không chat:\n"+
+				"- batdau: Tìm bạn chat\n"+
+				"- timnu: Tìm bạn nữ\n"+
+				"- timnam: Tìm bạn nam\n"+
+				"- chatcungbot: Chat cùng bot AI\n",
 				
 
 	KEYWORD_BATDAU : 'batdau',

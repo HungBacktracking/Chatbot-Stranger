@@ -135,6 +135,8 @@ app.post('/webhook/', function(req, res) {
 							gifts.sendDogPic(sender, null, true);
 						} else if (command === la.KEYWORD_FACT) {
 							gifts.sendFacts(sender, null, true);
+						} else if (command === la.KEYWORD_CLUB) {
+							gifts.sendClub(sender, null, true);
 						} else if (!event.read) {
 							sendButtonMsg(sender, la.HUONG_DAN, true, true);
 						}
@@ -153,6 +155,8 @@ app.post('/webhook/', function(req, res) {
 							gifts.sendFacts(sender, null, true);
 						} else if (command === la.KEYWORD_DOG) {
 							gifts.sendDogPic(sender, null, true);
+						} else if (command === la.KEYWORD_CLUB) {
+							gifts.sendClub(sender, null, true);
 						} else if (!event.read) {
 							sendButtonMsg(sender, la.WAITING, false, true);
 						}
@@ -175,6 +179,9 @@ app.post('/webhook/', function(req, res) {
 						} else if (command === la.KEYWORD_FACT) {
 							sendMessage(sender, sender2, event.message);
 							gifts.sendFacts(sender, sender2, false);
+						} else if (command === la.KEYWORD_CLUB) {
+							sendMessage(sender, sender2, event.message);
+							gifts.sendClub(sender, sender2, false);
 						} else {
 							if (event.read) {
 								facebook.sendSeenIndicator(sender2);
@@ -323,8 +330,8 @@ var sendButtonMsg = function(sender, txt, showStartBtn, showHelpBtn, showRpBtn =
 
 var sendMessage = function(sender, receiver, data) {
 	var messageData = {
-		text: data.text
-		//"quick_replies":facebook.quickbtns_mini
+		text: data.text,
+		"quick_replies":facebook.quickbtns_mini
 	};
 
 	if (data.attachments) {
