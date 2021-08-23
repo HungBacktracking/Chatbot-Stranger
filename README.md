@@ -1,21 +1,7 @@
-
-<img src="https://raw.githubusercontent.com/ngxson/chatbot-cnh/master/readme/github_cover.png" width="100%">
-
-# Chatbot CNH - Version 4.1
 ---
 ### Lời nói đầu
 
-> **(15/06/2019) Lưu ý**: Do mình bận nên không có tgian duy trì dự án này nữa. Các bạn có thể dùng phiên bản của @hieplpvip tại đây: [https://github.com/ptnkchat/ptnkchat](https://github.com/ptnkchat/ptnkchat)
-
-Bonjour à tous,
-
-Mình là Nui. Mình lập ra chatbot này với mục đích ban đầu là để thử thách bản thân, cũng như giúp mọi người có 1 nơi lành mạnh để giải tỏa tinh thần.
-
-Vì nó được làm từ lúc kinh nghiệm của mình còn ít ỏi, phong cách code sẽ khá xấu. Tuy nhiên, mình muốn tập trung nhiều vào việc tối ưu hóa, trong khi phải giảm tối đa chi phí hoạt động (thực tế mình chưa phải bỏ ra đồng nào để duy trì nó :smiley: ). Đồng thời mình cũng đã thử nghiệm 1 vài phương pháp thống kê thông qua dữ liệu thu được. Điều này rất ý nghĩa với mình vì nó giúp mình có 1 cái nhìn tổng quát hơn về nhu cầu của người sử dụng.
-
-Mình mong rằng với source code này, các bạn, không kể là học sinh CNH hay không, có thể tự tạo 1 chatbot hoàn hảo của riêng mình.
-
-Merci et bonne chance!
+> **Lưu ý**: Chatbot này được mình clone từ dự án Chatbot CNH của Team Nui và tự phát triển thêm một vài tính năng nho nhỏ. Mọi người có thể xem qua dự án gốc ở link này [https://github.com/ngxson/chatbot-cnh]
 
 P/S: Bạn có thể ghé thăm **website chính thức** của Nui tại đây: [https://ngxson.com/](https://ngxson.com/)
 
@@ -34,6 +20,11 @@ Ngoài tính năng nói chuyện ẩn danh mà hầu hết các chatbot cơ bả
   * Đối với heroku, tự động reset app để lấy IP khác nếu IP hiện tại bị facebook chặn.
   * Hạn chế tối đa việc sử dụng try... catch
 
+Và để phục vụ cho dự án riêng được đặt ra cũng như sự hứng thú học hỏi ứng dụng trong một dự án thực tiễn và mong muốn trường cũ cũng có riêng một chatbot nên mình đã thêm một vài tính năng khác như sau:
+ * Random một fact về Trường 
+ * Giới thiệu các câu lạc bộ
+ * Có thể chat với bot(AI) (chức năng này vẫn đang trong quá trình thực hiện)
+
 ### Hướng dẫn cài đặt
 
   Các bạn hãy xem hướng dẫn kèm ảnh chi tiết tại đây (dùng host Heroku): [click here](https://raw.githubusercontent.com/ngxson/chatbot-cnh/master/readme/1-TUT-CHATBOT-CNH.pdf)
@@ -46,11 +37,11 @@ Ngoài tính năng nói chuyện ẩn danh mà hầu hết các chatbot cơ bả
 
 ### Sơ đồ hoạt động
 
-Trăm nghe không bằng 1 thấy. Mình nghĩ sơ đồ sau sẽ giúp bạn có cái nhìn tổng quát hơn về những gì mình đã làm:
+Trăm nghe không bằng 1 thấy. Mình nghĩ sơ đồ sau sẽ giúp bạn có cái nhìn tổng quát hơn về những gì Team Nui đã làm:
 
 <img src="https://raw.githubusercontent.com/ngxson/chatbot-cnh/master/readme/diagram_index.png" width="100%">
 
-Trong sơ đồ còn 1 vài phần mình chưa biểu diễn đc:
+Trong sơ đồ còn 1 vài phần Nui chưa biểu diễn đc:
 
 * facebook.js: chứa tools để giao tiếp với facebook
 * extension/gifts.js: công cụ chọn ảnh chó/mèo random
@@ -61,6 +52,4 @@ Trong sơ đồ còn 1 vài phần mình chưa biểu diễn đc:
 * dbmongo.js: tools để giao tiếp với MongoDB
 * dbcache.js: tools để giao tiếp với cache
 
-### Thanks to
-
-Mã nguồn của mình có dựa vào source của @jw84: [click here](https://github.com/jw84/messenger-bot-tutorial)
+### 
