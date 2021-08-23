@@ -24,6 +24,7 @@ Và để phục vụ cho dự án riêng được đặt ra cũng như sự h�
  * Random một fact về Trường 
  * Giới thiệu các câu lạc bộ trong Trường
  * Có thể chat với bot(AI) (chức năng này vẫn đang trong quá trình thực hiện)
+ 
 P/S: Ở đây Trường là THPT Chuyên Lê Quý Đôn - Đà Nẵng
 
 ### Hướng dẫn cài đặt
