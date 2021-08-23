@@ -62,6 +62,41 @@ exports.setupFBApi = function(request, token, report_link) {
 			"thread_state" : "existing_thread"
 		}
 	}, function(error, response, body) {console.log(response.body)})
+  request({
+    url: 'https://graph.facebook.com/v11.0/me/messenger_profile',
+    qs: {access_token:co.FB_PAGE_ACCESS_TOKEN},
+    method: 'POST',
+    json: {
+      "persistent_menu": [
+        {
+          "locale": "default",
+          "composer_input_disabled": false,
+          "call_to_actions": [
+            {
+              "title": "Một câu chuyện nhỏ của Lê",
+              "type": "postback",
+              "payload": la.KEYWORD_FACT,
+            },
+            {
+              "title": "Các câu lạc bộ trường Lê Quý Đôn",
+              "type": "postback",
+              "payload": la.KEYWORD_CLUB,
+            },
+          {
+            "title": "kết thúc",
+            "type": "postback",
+            "payload": la.KEYWORD_KETTHUC,
+          },
+          {
+            "title": "trợ giúp",
+            "type": "postback",
+            "payload": la.KEYWORD_HELP,
+          }
+          ]
+        }
+      ]
+    }
+  }, function(error, response, body) {console.log(response.body)})
 }
 
 exports.quickbtns = [
@@ -79,11 +114,11 @@ exports.quickbtns = [
     "payload":la.KEYWORD_BOT
   },{
     "content_type":"text",
-    "title":"câu lạc bộ",
+    "title":"club",
     "payload":la.KEYWORD_CLUB
   },{
     "content_type":"text",
-    "title":"xem facts",
+    "title":"xem fact",
     "payload":la.KEYWORD_FACT
   },{
     "content_type":"text",
@@ -103,12 +138,12 @@ exports.quickbtns = [
 exports.quickbtns_mini = [
   {
     "content_type":"text",
-    "title":"câu lạc bộ",
+    "title":"club",
     "payload":la.KEYWORD_CLUB
   },
   {
     "content_type":"text",
-    "title":"xem facts",
+    "title":"xem fact",
     "payload":la.KEYWORD_FACT
   },
   {

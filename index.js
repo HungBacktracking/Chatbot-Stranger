@@ -147,6 +147,10 @@ app.post('/webhook/', function(req, res) {
 						if (command === la.KEYWORD_KETTHUC) {
 							tools.deleteFromWaitRoom(mongo, sender)
 							sendButtonMsg(sender, la.END_CHAT, true, true);
+						} else if (command === la.KEYWORD_BATDAU) {
+							sendTextMessage(sender, la.BATDAU_ERR_ALREADY);
+						} else if (command.startsWith(la.KEYWORD_GENDER)) {
+							sendTextMessage(sender, la.BATDAU_ERR_ALREADY);
 						} else if (command === la.KEYWORD_HELP) {
 							sendButtonMsg(sender, la.HELP_TXT, false, false);
 						} else if (command === la.KEYWORD_CAT) {
@@ -166,8 +170,6 @@ app.post('/webhook/', function(req, res) {
 					else if (!waitstate && sender2 != null) {
 						if (command === la.KEYWORD_KETTHUC) {
 							processEndChat(sender, sender2);
-						} else if (command === la.KEYWORD_BATDAU) {
-							sendTextMessage(sender, la.BATDAU_ERR_ALREADY);
 						} else if (command === la.KEYWORD_HELP) {
 							sendButtonMsg(sender, la.HELP_TXT, false, false);
 						} else if (command === la.KEYWORD_CAT) {
