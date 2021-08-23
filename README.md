@@ -22,8 +22,9 @@ Ngoài tính năng nói chuyện ẩn danh mà hầu hết các chatbot cơ bả
 
 Và để phục vụ cho dự án riêng được đặt ra cũng như sự hứng thú học hỏi ứng dụng trong một dự án thực tiễn và mong muốn trường cũ cũng có riêng một chatbot nên mình đã thêm một vài tính năng khác như sau:
  * Random một fact về Trường 
- * Giới thiệu các câu lạc bộ
+ * Giới thiệu các câu lạc bộ trong Trường
  * Có thể chat với bot(AI) (chức năng này vẫn đang trong quá trình thực hiện)
+P/S: Ở đây Trường là THPT Chuyên Lê Quý Đôn - Đà Nẵng
 
 ### Hướng dẫn cài đặt
 
