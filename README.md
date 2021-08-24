@@ -1,7 +1,7 @@
 ---
 ### Lời nói đầu
 
-> **Lưu ý**: Chatbot này được mình clone từ dự án Chatbot CNH của Team Nui và tự phát triển thêm một vài tính năng nho nhỏ. Mọi người có thể xem qua dự án gốc ở link này [https://github.com/ngxson/chatbot-cnh]
+> **Lưu ý**: Chatbot này được mình lấy ý tưởng từ dự án Chatbot CNH của Team Nui và tự phát triển thêm một vài tính năng nho nhỏ. Mọi người có thể xem qua dự án gốc ở link này [https://github.com/ngxson/chatbot-cnh]
 
 P/S: Bạn có thể ghé thăm **website chính thức** của Nui tại đây: [https://ngxson.com/](https://ngxson.com/)
 
