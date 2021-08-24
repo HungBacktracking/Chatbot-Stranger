@@ -44,7 +44,7 @@ exports.getFbData = function(accessToken, apiPath, callback) {
 
 exports.setupFBApi = function(request, token, report_link) {
 	request({
-		url: 'https://graph.facebook.com/v2.6/me/messenger_profile',
+		url: 'https://graph.facebook.com/v11.0/me/messenger_profile',
 		qs: {access_token:token},
 		method: 'POST',
 		json: {
@@ -64,7 +64,7 @@ exports.setupFBApi = function(request, token, report_link) {
 	}, function(error, response, body) {console.log(response.body)})
   request({
     url: 'https://graph.facebook.com/v11.0/me/messenger_profile',
-    qs: {access_token:co.FB_PAGE_ACCESS_TOKEN},
+    qs: {access_token:token},//co.FB_PAGE_ACCESS_TOKEN},
     method: 'POST',
     json: {
       "persistent_menu": [
@@ -72,23 +72,23 @@ exports.setupFBApi = function(request, token, report_link) {
           "locale": "default",
           "composer_input_disabled": false,
           "call_to_actions": [
-            {
-              "title": "Một câu chuyện nhỏ của Lê",
-              "type": "postback",
-              "payload": la.KEYWORD_FACT,
-            },
-            {
-              "title": "Các câu lạc bộ trường Lê Quý Đôn",
-              "type": "postback",
-              "payload": la.KEYWORD_CLUB,
-            },
           {
-            "title": "kết thúc",
+            "title": "Một câu chuyện nhỏ của Lê",
+            "type": "postback",
+            "payload": la.KEYWORD_FACT,
+          },
+          {
+            "title": "Các CLB trường Lê Quý Đôn",
+            "type": "postback",
+            "payload": la.KEYWORD_CLUB,
+          },
+          {
+            "title": "Kết thúc",
             "type": "postback",
             "payload": la.KEYWORD_KETTHUC,
           },
           {
-            "title": "trợ giúp",
+            "title": "Trợ giúp",
             "type": "postback",
             "payload": la.KEYWORD_HELP,
           }
@@ -169,7 +169,7 @@ var sendFacebookApi = function (sender, receiver, messageData, data, dontSendErr
 		}
 
 		request({
-			url: 'https://graph.facebook.com/v2.6/me/messages',
+			url: 'https://graph.facebook.com/v11.0/me/messages',
 			qs: {access_token:co.FB_PAGE_ACCESS_TOKEN},
 			method: 'POST',
 			json: {
@@ -198,7 +198,7 @@ var sendFacebookApi = function (sender, receiver, messageData, data, dontSendErr
 
 exports.sendSeenIndicator = function (receiver) {
   request({
-    url: 'https://graph.facebook.com/v2.6/me/messages',
+    url: 'https://graph.facebook.com/v11.0/me/messages',
     qs: {access_token:co.FB_PAGE_ACCESS_TOKEN},
     method: 'POST',
     json: {

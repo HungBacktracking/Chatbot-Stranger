@@ -4,7 +4,7 @@ module.exports = {
 	//FACEBOOK TOKEN
 	FB_APP_SECRET : '516ba7e5a230b14479b48fbc14a34940',
 	FB_PAGE_VERIFY_TOKEN : 'backtracking', // đặt 1 mã bất kỳ
-	FB_PAGE_ACCESS_TOKEN : 'EAAMewLjZCkcoBAEhZC5cfdBoYPyJEZC0AGWrZAXehJhgprrx7dDgjVmVY5V2KRYPZCtjTyhAHthR0a2DSYNAuDmrWEIBEnpyCP1xZAol6Rnrx2FojdzCwGLlkKAKFJLZCZA6YPvs716SpWWQy3mKu5taFOTr1g2MIajB7ByUxnH9aTMvAUQtUkzyRrL6ZC3Dxc6GIfu7O4hUlFgZDZD',
+	FB_PAGE_ACCESS_TOKEN : 'EAAMewLjZCkcoBACuI0W1ZAAWgqouvmGlyQPevoMasDmA3fmPGXWaPFb8Vy1yZBltQmk9EZCkZAJ6gHqw2meKe4aO49gSdZBMuPtJ7zmsMldonRc9KlcZCd1CrKuFNz2P6hOogjFZB7NdaLDIZA6ZAV6ZAZBZBz7OEz0d7atqpzpRrLBL33SJ7waRZByZC774mcTslskozbrBwFtwcrFBQZDZD',
 
 	//HEROKU STUFFS
 	APP_NAME : 'chatbotbacktracktesting',
@@ -30,5 +30,5 @@ module.exports = {
 	                            //Đặt 0 để cho phép đợi bao lâu cũng đc
 
 	//ADMIN UI
-	ADMIN_PASSWORD : "" //password để login vào trang admin
+	ADMIN_PASSWORD : "backtracking" //password để login vào trang admin
 };

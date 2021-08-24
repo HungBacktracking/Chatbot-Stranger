@@ -3,8 +3,8 @@
 
 module.exports = {
 	BAO_TRI : "[Chatbot] Server hiện đang bảo trì. Mình sẽ sớm kết nối lại và thông báo cho các bạn.",
-	FIRST_COME : '[Chatbot] Chào mừng bạn đến với Chatbot LQĐ. Trước khi bắt đầu, hãy chắc chắn rằng bạn đã chọn đúng giới tính người muốn chat cùng. Ấn trợ giúp (trogiup) hoặc menu để xem thêm.',
-	HUONG_DAN : "[Chatbot] Gửi batdau để tìm bạn chat, nhắn trogiup hoặc nhấn nút menu để xem các tùy chọn khác.",
+	FIRST_COME : '[Chatbot] Chào mừng bạn đến với Chatbot LQĐ. Trước khi bắt đầu, hãy chắc chắn rằng bạn đã chọn đúng giới tính người muốn chat cùng. Ấn trợ giúp (trogiup) để xem thêm.',
+	HUONG_DAN : "[Chatbot] Gửi batdau để tìm bạn chat hoặc trogiup để xem các tùy chọn khác.",
 	BATDAU_OKAY : "[Chatbot] OK! Chúng mình sẽ thông báo khi tìm được \"đối phương\".",
 	BATDAU_WARN_GENDER : "[Chatbot] Lưu ý: Bạn không chọn giới tính. Có thể bạn sẽ phải đợi lâu hơn.",
 	BATDAU_ERR_ALREADY : "[Chatbot] Bạn không thể tìm người khác khi chưa ketthuc...",
@@ -26,10 +26,10 @@ module.exports = {
 				"- ketthuc: Kết thúc chat\n"+
 				"- trogiup: Xem trợ giúp\n"+
 				"- club: Các câu lạc bộ\n"+
-				"- fact: Một thú vị nhỏ\n"+
+				"- fact: Một điều thú vị\n"+
 				"- meow: Xem ảnh mèo\n"+
 				"- gauw: Xem ảnh cún\n"+
-				"Các lệnh có thể dùng khi đang không chat:\n"+
+				"\nCác lệnh có thể dùng khi đang không chat:\n"+
 				"- batdau: Tìm bạn chat\n"+
 				"- timnu: Tìm bạn nữ\n"+
 				"- timnam: Tìm bạn nam\n"+

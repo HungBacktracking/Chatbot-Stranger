@@ -1,7 +1,7 @@
 ---
 ### Lời nói đầu
 
-> **Lưu ý**: Chatbot này được mình lấy ý tưởng từ dự án Chatbot CNH của Team Nui và tự phát triển thêm một vài tính năng nho nhỏ. Mọi người có thể xem qua dự án gốc ở link này [https://github.com/ngxson/chatbot-cnh]
+> **Lưu ý**: Chatbot này được mình clone từ dự án Chatbot CNH của Team Nui và tự phát triển thêm một vài tính năng nho nhỏ. Mọi người có thể xem qua dự án gốc ở link này [https://github.com/ngxson/chatbot-cnh]
 
 P/S: Bạn có thể ghé thăm **website chính thức** của Nui tại đây: [https://ngxson.com/](https://ngxson.com/)
 
@@ -22,10 +22,8 @@ Ngoài tính năng nói chuyện ẩn danh mà hầu hết các chatbot cơ bả
 
 Và để phục vụ cho dự án riêng được đặt ra cũng như sự hứng thú học hỏi ứng dụng trong một dự án thực tiễn và mong muốn trường cũ cũng có riêng một chatbot nên mình đã thêm một vài tính năng khác như sau:
  * Random một fact về Trường 
- * Giới thiệu các câu lạc bộ trong Trường
+ * Giới thiệu các câu lạc bộ
  * Có thể chat với bot(AI) (chức năng này vẫn đang trong quá trình thực hiện)
- 
-P/S: Ở đây Trường là THPT Chuyên Lê Quý Đôn - Đà Nẵng
 
 ### Hướng dẫn cài đặt
 
