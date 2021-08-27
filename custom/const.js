@@ -4,7 +4,7 @@ module.exports = {
 	//FACEBOOK TOKEN
 	FB_APP_SECRET : '516ba7e5a230b14479b48fbc14a34940',
 	FB_PAGE_VERIFY_TOKEN : 'backtracking', // đặt 1 mã bất kỳ
-	FB_PAGE_ACCESS_TOKEN : 'EAAMewLjZCkcoBACuI0W1ZAAWgqouvmGlyQPevoMasDmA3fmPGXWaPFb8Vy1yZBltQmk9EZCkZAJ6gHqw2meKe4aO49gSdZBMuPtJ7zmsMldonRc9KlcZCd1CrKuFNz2P6hOogjFZB7NdaLDIZA6ZAV6ZAZBZBz7OEz0d7atqpzpRrLBL33SJ7waRZByZC774mcTslskozbrBwFtwcrFBQZDZD',
+	FB_PAGE_ACCESS_TOKEN : 'EAAMewLjZCkcoBAGQAG5sIyiXiRZAAe5XNJrjMQuA7cHUUBNx7uCp6f9v2hZBatoGBrEERG1w5jgZCkAZAasoLBZCryHYQcStAFzoa37cHlzyU3hQWj3idV0st2RBCZAX1Gr5SovbGRDJ9dQLk8oFSXKmE7vdWrhsM1SNtybp4STPxB0bxJPrCQiaycdcQtq1uR80tBIeMGIcgZDZD',
 
 	//HEROKU STUFFS
 	APP_NAME : 'chatbotbacktracktesting',
@@ -21,7 +21,7 @@ module.exports = {
 	POST_LOG_ENTRY2 : '',
 
 	//GOOGLE FORMS
-	REPORT_LINK : "https://goo.gl/forms/FlqtshjdI9bMesSN2",
+	REPORT_LINK : "https://forms.gle/91VESvxABQzFx68A8",
 
 	//OTHERS
 	//(không bắt buộc) Cách bật tính năng hiện đã xem (seen): https://goo.gl/xjw9nP

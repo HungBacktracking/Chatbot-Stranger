@@ -122,6 +122,8 @@ app.post('/webhook/', function(req, res) {
 					//ko ở trong CR lẫn WR
 					if (!waitstate && sender2 == null) {
 						if (command === la.KEYWORD_BATDAU) {
+							gifts.sendGender(sender);
+						} else if (command === la.KEYWORD_BATKI) {
 							gendertool.getGender(mongo, sender, function(genderid) {
 								findPair(sender, genderid);
 							}, facebook, token);
@@ -137,6 +139,8 @@ app.post('/webhook/', function(req, res) {
 							gifts.sendFacts(sender, null, true);
 						} else if (command === la.KEYWORD_CLUB) {
 							gifts.sendClub(sender, null, true);
+						} else if (command === la.KEYWORD_CLUB_2) {
+							gifts.sendClub_2(sender, null, true);
 						} else if (!event.read) {
 							sendButtonMsg(sender, la.HUONG_DAN, true, true);
 						}
@@ -161,6 +165,8 @@ app.post('/webhook/', function(req, res) {
 							gifts.sendDogPic(sender, null, true);
 						} else if (command === la.KEYWORD_CLUB) {
 							gifts.sendClub(sender, null, true);
+						} else if (command === la.KEYWORD_CLUB_2) {
+							gifts.sendClub_2(sender, null, true);
 						} else if (!event.read) {
 							sendButtonMsg(sender, la.WAITING, false, true);
 						}
@@ -184,6 +190,9 @@ app.post('/webhook/', function(req, res) {
 						} else if (command === la.KEYWORD_CLUB) {
 							sendMessage(sender, sender2, event.message);
 							gifts.sendClub(sender, sender2, false);
+						} else if (command === la.KEYWORD_CLUB_2) {
+							sendMessage(sender, sender2, event.message);
+							gifts.sendClub_2(sender, sender2, false);
 						} else {
 							if (event.read) {
 								facebook.sendSeenIndicator(sender2);
@@ -253,7 +262,9 @@ function findPair(id, mygender) {
 			} else {
 				var isPreferedGender = (mygender == 0 && target_gender == 0) ||
 					(mygender == 1 && target_gender == 2) ||
-					(mygender == 2 && target_gender == 1);
+					(mygender == 2 && target_gender == 1) ||
+					(mygender == 3 && target_gender == 3) ||
+					(mygender == 4 && target_gender == 4);
 				if (list.length > co.MAX_PEOPLE_WAITROOM ||
 					dontChooseGender((mygender == 0 || target_gender == 0))) {
 					// kết nối nếu có quá nhiều người trong waitroom

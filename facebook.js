@@ -83,6 +83,11 @@ exports.setupFBApi = function(request, token, report_link) {
             "payload": la.KEYWORD_CLUB,
           },
           {
+            "title": "Bắt đầu",
+            "type": "postback",
+            "payload": la.KEYWORD_BATDAU,
+          },
+          {
             "title": "Kết thúc",
             "type": "postback",
             "payload": la.KEYWORD_KETTHUC,
@@ -102,35 +107,27 @@ exports.setupFBApi = function(request, token, report_link) {
 exports.quickbtns = [
   {
     "content_type":"text",
-    "title":"tìm nam",
-    "payload":la.KEYWORD_GENDER+'nam'
+    "title":"Bắt đầu",
+    "payload":la.KEYWORD_BATDAU
   },{
     "content_type":"text",
-    "title":"tìm nữ",
-    "payload":la.KEYWORD_GENDER+'nu'
-  },{
-    "content_type":"text",
-    "title":"chat cùng bot",
-    "payload":la.KEYWORD_BOT
-  },{
-    "content_type":"text",
-    "title":"club",
+    "title":"Club",
     "payload":la.KEYWORD_CLUB
   },{
     "content_type":"text",
-    "title":"xem fact",
+    "title":"Fact",
     "payload":la.KEYWORD_FACT
   },{
     "content_type":"text",
-    "title":"meow",
+    "title":"Meow",
     "payload":la.KEYWORD_CAT
   },{
     "content_type":"text",
-    "title":"gauw",
+    "title":"Gauw",
     "payload":la.KEYWORD_DOG
   },{
     "content_type":"text",
-    "title":"trợ giúp",
+    "title":"Trợ giúp",
     "payload":la.KEYWORD_HELP
   }
 ];
@@ -138,28 +135,63 @@ exports.quickbtns = [
 exports.quickbtns_mini = [
   {
     "content_type":"text",
-    "title":"club",
+    "title":"Club",
     "payload":la.KEYWORD_CLUB
   },
   {
     "content_type":"text",
-    "title":"xem fact",
+    "title":"Fact",
     "payload":la.KEYWORD_FACT
   },
   {
     "content_type":"text",
-    "title":"meow",
+    "title":"Meow",
     "payload":la.KEYWORD_CAT
   },{
     "content_type":"text",
-    "title":"gauw",
+    "title":"Gauw",
     "payload":la.KEYWORD_DOG
   },{
     "content_type":"text",
-    "title":"trợ giúp",
+    "title":"Trợ giúp",
     "payload":la.KEYWORD_HELP
   }
 ];
+
+exports.quickbtns_club = [
+  {
+    "content_type":"text",
+    "title":"Xem thêm 10 CLB",
+    "payload":la.KEYWORD_CLUB_2
+  }
+];
+
+exports.quickbtns_gender = [
+  {
+    "content_type":"text",
+    "title":"Nam",
+    "payload":'timnam'
+  },
+  {
+    "content_type":"text",
+    "title":"Nữ",
+    "payload":'timnu'
+  },
+  {
+    "content_type":"text",
+    "title":"Gay",
+    "payload":'timgay'
+  },{
+    "content_type":"text",
+    "title":"Les",
+    "payload":'timles'
+  },{
+    "content_type":"text",
+    "title":"Bất kì",
+    "payload":la.KEYWORD_BATKI
+  }
+];
+
 
 var sendFacebookApi = function (sender, receiver, messageData, data, dontSendErr) {
 	if (messageData.text || messageData.attachment) {

@@ -1,3 +1,4 @@
+const la = require('../custom/lang');
 var MAX_CAT_IMG = 10229;
 var MAX_DOG_IMG = 5250;
 var MAX_FACT = 117;
@@ -61,7 +62,7 @@ function sendClub(id, id2, notInChat)
 		  "template_type":"generic",
 		  "elements":[
 			{
-				"title":"Welcome to CLB Bóng Chuyền LQĐ!",
+				"title":"CLB Bóng Chuyền LQĐ",
 				"image_url":'https://hungbacktracking.github.io/facts.github.io/club/1.jpg',
 				"subtitle":"Rèn luyện - Sức khỏe - Tinh thần",
 				"buttons":[
@@ -73,7 +74,7 @@ function sendClub(id, id2, notInChat)
 				]      
 			  },
 			  {
-				"title":"Welcome to đội Công tác xã hội LQĐ!",
+				"title":"Đội Công tác Xã Hội LQĐ!",
 				"image_url":'https://hungbacktracking.github.io/facts.github.io/club/2.jpg',
 				"subtitle":"Hoạt động xã hội - Tinh thần tình nguyện - Kĩ năng thanh niên",
 				"buttons":[
@@ -85,7 +86,7 @@ function sendClub(id, id2, notInChat)
 				]      
 			  },
 			  {
-				"title":"Welcome to CLB Bóng Chày LQĐ!",
+				"title":"CLB Bóng Chày LQĐ!",
 				"image_url":'https://hungbacktracking.github.io/facts.github.io/club/3.jpg',
 				"subtitle":"Nhiệt huyết - Bổ ích - Sức khỏe",
 				"buttons":[
@@ -97,7 +98,7 @@ function sendClub(id, id2, notInChat)
 				]      
 			  },
 			  {
-				"title":"Welcome to Lạc Acoustic",
+				"title":"Lạc Acoustic",
 				"image_url":'https://hungbacktracking.github.io/facts.github.io/club/4.jpg',
 				"subtitle":"Nghệ thuật - Âm nhạc - Tài năng",
 				"buttons":[
@@ -109,7 +110,7 @@ function sendClub(id, id2, notInChat)
 				]      
 			  },
 			  {
-				"title":"Welcome to AH LQD Basketball team",
+				"title":"AH LQD Basketball team",
 				"image_url":'https://hungbacktracking.github.io/facts.github.io/club/5.jpg',
 				"subtitle":"Bóng rổ - Giao lưu - Tập luyện",
 				"buttons":[
@@ -121,7 +122,7 @@ function sendClub(id, id2, notInChat)
 				]      
 			  },
 			  {
-				"title":"Welcome to CLB Sáng tạo trẻ YCC",
+				"title":"CLB Sáng tạo trẻ YCC",
 				"image_url":'https://hungbacktracking.github.io/facts.github.io/club/6.png',
 				"subtitle":"Khám phá - Trí tuệ - Sáng tạo",
 				"buttons":[
@@ -133,7 +134,7 @@ function sendClub(id, id2, notInChat)
 				]      
 			  },
 			  {
-				"title":"Welcome to Lycoris - CLB Điện ảnh",
+				"title":"Lycoris - CLB Điện ảnh",
 				"image_url":'https://hungbacktracking.github.io/facts.github.io/club/7.jpg',
 				"subtitle":"Bỉ Ngạn Hoa chính là gợi cho ta cái cảm giác \"trăng trong nước, hoa trong gương\", càng ngắm càng muốn nắm giữ.",
 				"buttons":[
@@ -167,6 +168,158 @@ function sendClub(id, id2, notInChat)
 					"title":"View Website"
 				  }         
 				]      
+			  },
+			  {
+				"title":"CLB Môi trường GREENIE",
+				"image_url":'https://hungbacktracking.github.io/facts.github.io/club/10.jpg',
+				"subtitle":"Nâng cao nhận thức về môi trường, xã hội",
+				"buttons":[
+				  {
+					"type":"web_url",
+					"url":"https://www.facebook.com/greenie.club/",
+					"title":"View Website"
+				  }         
+				]      
+			  }
+		  ]
+		}
+		}
+	}
+	
+	//if (notInChat) 
+	data["quick_replies"] = facebook.quickbtns_club;
+	//else data["quick_replies"] = facebook.quickbtns_mini;
+	facebook.sendFacebookApi(id, id, data, {});
+	if (id2 != null) facebook.sendFacebookApi(id2, id2, data, {});
+}
+
+function sendClub_2(id, id2, notInChat) 
+{
+	var data={
+		"attachment":{
+		"type":"template",
+		"payload":{
+		  "template_type":"generic",
+		  "elements":[
+			{
+				"title":"CLB C&S (CARE & SHARE)",
+				"image_url":'https://hungbacktracking.github.io/facts.github.io/club/11.jpg',
+				"subtitle":"Giúp đỡ - Từ thiện - Tương thân tương ái",
+				"buttons":[
+				  {
+					"type":"web_url",
+					"url":"https://www.facebook.com/cs.wecareweshare",
+					"title":"View Website"
+				  }         
+				]      
+			  },
+			  {
+				"title":"CLB Báo Mùa Xanh",
+				"image_url":'https://hungbacktracking.github.io/facts.github.io/club/12.jpg',
+				"subtitle":"Có một Mùa Xanh không thấy mãn đời. Có một Mùa Xanh thấy mãi trong tim....",
+				"buttons":[
+				  {
+					"type":"web_url",
+					"url":"https://www.facebook.com/BaoMuaXanh",
+					"title":"View Website"
+				  }         
+				]      
+			  },
+			  {
+				"title":"CLB DANANG MODEL UN SOCIETY (DMS)",
+				"image_url":'https://hungbacktracking.github.io/facts.github.io/club/13.jpg',
+				"subtitle":"Một câu lạc bộ về mô hình Hội nghị Mô phỏng Liên Hợp Quốc (MUN)",
+				"buttons":[
+				  {
+					"type":"web_url",
+					"url":"https://www.facebook.com/danangmunsociety",
+					"title":"View Website"
+				  }         
+				]      
+			  },
+			  {
+				"title":"CLB Tranh biện COGIC",
+				"image_url":'https://hungbacktracking.github.io/facts.github.io/club/14.png',
+				"subtitle":"Tranh biện - Tư duy - Sáng tạo",
+				"buttons":[
+				  {
+					"type":"web_url",
+					"url":"https://www.facebook.com/cogic.lqd",
+					"title":"View Website"
+				  }         
+				]      
+			  },
+			  {
+				"title":"LQĐ Chess Club",
+				"image_url":'https://hungbacktracking.github.io/facts.github.io/club/15.jpg',
+				"subtitle":"Câu lạc bộ cờ vua",
+				"buttons":[
+				  {
+					"type":"web_url",
+					"url":"https://www.facebook.com/LQDchessclub",
+					"title":"View Website"
+				  }         
+				]      
+			  },
+			  {
+				"title":"CLB Bóng đá",
+				"image_url":'https://hungbacktracking.github.io/facts.github.io/club/16.jpg',
+				"subtitle":"Thể thao và sức khỏe",
+				"buttons":[
+				  {
+					"type":"web_url",
+					"url":"https://www.facebook.com/lqdfootballclubdn",
+					"title":"View Website"
+				  }         
+				]      
+			  },
+			  {
+				"title":"CLB English Zoo",
+				"image_url":'https://hungbacktracking.github.io/facts.github.io/club/17.jpg',
+				"subtitle":"Tiếng anh - Bổ ích - Phát triển kỹ năng",
+				"buttons":[
+				  {
+					"type":"web_url",
+					"url":"https://www.facebook.com/englishzoodn",
+					"title":"View Website"
+				  }         
+				]      
+			  },
+			  {
+				"title":"CLB Bogamis",
+				"image_url":'https://hungbacktracking.github.io/facts.github.io/club/18.jpg',
+				"subtitle":"Giải trí - Sáng tạo - Kết bạn",
+				"buttons":[
+				  {
+					"type":"web_url",
+					"url":"https://www.facebook.com/bogamis",
+					"title":"View Website"
+				  }         
+				]      
+			  },
+			  {
+				"title":"TORAI NIPPON - CLB Văn Hóa Nhật Bản",
+				"image_url":'https://hungbacktracking.github.io/facts.github.io/club/19.jpg',
+				"subtitle":"Nơi giao lưu gắn kết dành cho các bạn có cùng niềm đam mê với Nhật Bản",
+				"buttons":[
+				  {
+					"type":"web_url",
+					"url":"https://www.facebook.com/torainipponlqd",
+					"title":"View Website"
+				  }         
+				]      
+			  },
+			  {
+				"title":"CLB Hội Họa SEREIN",
+				"image_url":'https://hungbacktracking.github.io/facts.github.io/club/20.jpg',
+				"subtitle":"Hội họa - Đam mê - Kết bạn",
+				"buttons":[
+				  {
+					"type":"web_url",
+					"url":"https://www.facebook.com/clbserein1609",
+					"title":"View Website"
+				  }         
+				]      
 			  }
 		  ]
 		}
@@ -179,6 +332,13 @@ function sendClub(id, id2, notInChat)
 	if (id2 != null) facebook.sendFacebookApi(id2, id2, data, {});
 }
 
+function sendGender(id) 
+{
+	var data={ "text": la.BATDAU_GENDER}
+	
+	data["quick_replies"] = facebook.quickbtns_gender;
+	facebook.sendFacebookApi(id, id, data, {});
+}
 
 function sendFacts(id, id2, notInChat) 
 {
@@ -271,6 +431,8 @@ function solveFactData(val)
 
 module.exports = {
 	sendClub: sendClub,
+	sendClub_2: sendClub_2,
+	sendGender: sendGender,
 	sendFacts: sendFacts,
 	sendCatPic: sendCatPic,
 	sendDogPic: sendDogPic,

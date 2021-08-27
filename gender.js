@@ -6,6 +6,10 @@ var setGender = function (sqlconn, id, gender_str, callback) {
 		genderid = 1;
 	} else if (gender_str == la.KEYWORD_GENDER+'nu') {
 		genderid = 2;
+	} else if (gender_str == la.KEYWORD_GENDER+'gay') {
+		genderid = 3;
+	} else if (gender_str == la.KEYWORD_GENDER+'les') {
+		genderid = 4;
 	} else if (gender_str == la.KEYWORD_GENDER+'khong') {
 		genderid = 0;
 	} else {
@@ -48,6 +52,12 @@ var getGender = function (sqlconn, id, callback, facebook, token) {
 					} else if (data.gender == "female")  {
 						setGender(sqlconn, id, la.KEYWORD_GENDER+"nam", function(ret,id){});
 						callback(1);
+					} else if (data.gender == "gay")  {
+						setGender(sqlconn, id, la.KEYWORD_GENDER+"gay", function(ret,id){});
+						callback(3);
+					} else if (data.gender == "les")  {
+						setGender(sqlconn, id, la.KEYWORD_GENDER+"les", function(ret,id){});
+						callback(4);
 					}
 				});
 
