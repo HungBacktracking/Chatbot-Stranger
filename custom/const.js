@@ -21,7 +21,7 @@ module.exports = {
 	POST_LOG_ENTRY2 : '',
 
 	//GOOGLE FORMS
-	REPORT_LINK : "https://goo.gl/forms/FlqtshjdI9bMesSN2",
+	REPORT_LINK : "https://forms.gle/91VESvxABQzFx68A8",
 
 	//OTHERS
 	//(không bắt buộc) Cách bật tính năng hiện đã xem (seen): https://goo.gl/xjw9nP
