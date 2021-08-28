@@ -2,6 +2,7 @@ var https = require('https');
 var co = require('./custom/const');
 const la = require('./custom/lang');
 const request = require('request');
+const { KEYWORD_GENDER } = require('./custom/lang');
 var heroku = null;
 
 if (co.HEROKU_API_KEY) {
@@ -170,25 +171,25 @@ exports.quickbtns_gender = [
   {
     "content_type":"text",
     "title":"Nam",
-    "payload":'timnam'
+    "payload":KEYWORD_GENDER+'nam'
   },
   {
     "content_type":"text",
     "title":"Nữ",
-    "payload":'timnu'
+    "payload":KEYWORD_GENDER+'nu'
   },
   {
     "content_type":"text",
     "title":"Gay",
-    "payload":'timgay'
+    "payload":KEYWORD_GENDER+'gay'
   },{
     "content_type":"text",
     "title":"Les",
-    "payload":'timles'
+    "payload":KEYWORD_GENDER+'les'
   },{
     "content_type":"text",
     "title":"Bất kì",
-    "payload":la.KEYWORD_BATKI
+    "payload":KEYWORD_GENDER+'all'
   }
 ];
 

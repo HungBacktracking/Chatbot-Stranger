@@ -123,11 +123,11 @@ app.post('/webhook/', function(req, res) {
 					if (!waitstate && sender2 == null) {
 						if (command === la.KEYWORD_BATDAU) {
 							gifts.sendGender(sender);
-						} else if (command === la.KEYWORD_BATKI) {
+						} /*else if (command === la.KEYWORD_BATKI) {
 							gendertool.getGender(mongo, sender, function(genderid) {
 								findPair(sender, genderid);
 							}, facebook, token);
-						} else if (command.startsWith(la.KEYWORD_GENDER)) {
+						}*/ else if (command.startsWith(la.KEYWORD_GENDER)) {
 							gendertool.setGender(mongo, sender, command, genderWriteCallback);
 						} else if (command === la.KEYWORD_HELP) {
 							sendButtonMsg(sender, la.HELP_TXT, true, false);
@@ -158,15 +158,15 @@ app.post('/webhook/', function(req, res) {
 						} else if (command === la.KEYWORD_HELP) {
 							sendButtonMsg(sender, la.HELP_TXT, false, false);
 						} else if (command === la.KEYWORD_CAT) {
-							gifts.sendCatPic(sender, null, true);
+							gifts.sendCatPic(sender, null, false);
 						} else if (command === la.KEYWORD_FACT) {
-							gifts.sendFacts(sender, null, true);
+							gifts.sendFacts(sender, null, false);
 						} else if (command === la.KEYWORD_DOG) {
-							gifts.sendDogPic(sender, null, true);
+							gifts.sendDogPic(sender, null, false);
 						} else if (command === la.KEYWORD_CLUB) {
-							gifts.sendClub(sender, null, true);
+							gifts.sendClub(sender, null, false);
 						} else if (command === la.KEYWORD_CLUB_2) {
-							gifts.sendClub_2(sender, null, true);
+							gifts.sendClub_2(sender, null, false);
 						} else if (!event.read) {
 							sendButtonMsg(sender, la.WAITING, false, true);
 						}
@@ -233,6 +233,8 @@ function genderWriteCallback(ret, id) {
 				sendTextMessage(id, la.GENDER_WRITE_OK + la.GENDER_ARR[genderid] + la.GENDER_WRITE_WARN);
 				sendButtonMsg(id, la.HUONG_DAN, true, true);
 			}, facebook, token);
+		case 0:
+			findPair(id, ret);
 			break;
 		default:
 			sendTextMessage(id, la.GENDER_WRITE_OK + la.GENDER_ARR[ret] + la.GENDER_WRITE_WARN);
@@ -265,7 +267,8 @@ function findPair(id, mygender) {
 					(mygender == 2 && target_gender == 1) ||
 					(mygender == 3 && target_gender == 3) ||
 					(mygender == 4 && target_gender == 4);
-				if (list.length > co.MAX_PEOPLE_WAITROOM ||
+				if ((mygender == 0 && target_gender == 0)) connect2People(id, target, isPreferedGender);
+				else if (list.length > co.MAX_PEOPLE_WAITROOM ||
 					dontChooseGender((mygender == 0 || target_gender == 0))) {
 					// kết nối nếu có quá nhiều người trong waitroom
 					// hoặc là ko đc kén chọn gender
@@ -285,8 +288,13 @@ function findPair(id, mygender) {
 }
 
 function dontChooseGender(isPriority) {
-	if (isPriority) return (Math.random() > 0.4);
-	else return (Math.random() > 0.9);
+	var data = randomIntFromInterval(1,100);
+	if (isPriority) return (data <= 30);
+	else return false;
+}
+
+function randomIntFromInterval(min,max) {
+    return Math.floor(Math.random()*(max-min+1)+min);
 }
 
 var connect2People = function(id, target, wantedGender, isFleur = false) {
@@ -328,7 +336,7 @@ var sendButtonMsg = function(sender, txt, showStartBtn, showHelpBtn, showRpBtn =
 			"title": "Gửi phản hồi",
 			"url": co.REPORT_LINK
 		});
-	sendFacebookApi(sender, sender, {
+	if (showStartBtn) sendFacebookApi(sender, sender, {
 		"attachment": {
 			"type": "template",
 			"payload": {
@@ -338,6 +346,17 @@ var sendButtonMsg = function(sender, txt, showStartBtn, showHelpBtn, showRpBtn =
 			}
 		},
 		"quick_replies": facebook.quickbtns
+	}, {});
+	else sendFacebookApi(sender, sender, {
+		"attachment": {
+			"type": "template",
+			"payload": {
+				"template_type": "button",
+				"text": txt,
+				"buttons": btns
+			}
+		},
+		"quick_replies": facebook.quickbtns_mini
 	}, {});
 }
 

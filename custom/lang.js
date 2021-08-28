@@ -22,7 +22,7 @@ module.exports = {
 	GENDER_ERR : "[Chatbot] Lỗi: Giới tính nhập vào không hợp lệ!",
 	GENDER_WRITE_OK : "[Chatbot] Bạn đã chọn giới tính mong muốn tìm được là: ",
 	GENDER_WRITE_WARN : "\n\nLưu ý: Tùy chọn này chỉ có tác dụng với PHẦN LỚN các cuộc nói chuyện.",
-	GENDER_ARR : ['Bất kì', 'Nam', 'Nữ', 'Gay', 'Les'],
+	GENDER_ARR : ['All', 'Nam', 'Nữ', 'Gay', 'Les'],
 	HELP_TXT : "[Chatbot] Danh sách các lệnh:\n" +
 				"- batdau: Tìm bạn chat\n"+
 				"- ketthuc: Kết thúc chat\n"+
@@ -34,7 +34,6 @@ module.exports = {
 				
 				
 	KEYWORD_BATDAU : 'batdau',
-	KEYWORD_BATKI : 'aicungduoc',
 	KEYWORD_KETTHUC : 'ketthuc',
 	KEYWORD_GENDER : 'tim',
 	KEYWORD_HELP : 'trogiup',
