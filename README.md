@@ -4,8 +4,8 @@
 > **Lưu ý**: Chatbot này được mình phát triển từ dự án Chatbot CNH của Nui và tự cải thiện thêm một vài tính năng nho nhỏ. Mọi người có thể xem qua dự án gốc ở link này [https://github.com/ngxson/chatbot-cnh]
 
 ### Tính năng
-<img src="https://hungbacktracking.github.io/facts.github.io/Readme/Trogiup.jpg" width="100%">
-Chatbot LQĐ có 1 vài tính năng thú vị như:
+<img src="https://hungbacktracking.github.io/facts.github.io/Readme/Trogiup.jpg" width="50%">
+### Chatbot LQĐ có các tính năng thú vị như:
 
  - Ghép cặp người lạ, trong đó cho phép chọn giới tính người muốn gặp và được mở rộng về giới tính
 <img src="https://hungbacktracking.github.io/facts.github.io/Readme/Gender.jpg" width="100%">
