@@ -26,6 +26,8 @@
  - Nút báo cáo được đặt tại các vị trí cần thiết, tránh để người dùng sử dụng nút report của facebook => page dễ bị xóa
  - Các thông báo lỗi rõ ràng, người dùng dễ hiểu (ví dụ như inbox ko gửi được do "đối phương" chat đã block page/deactive facebook...)
 
+### Mọi người có thể dùng thử chatbot tại link này(hiện tại cần có vai trò người thử nghiệm để sử dụng): [ https://m.me/ChatbotBacktracking]
+
 
 ### Sơ đồ hoạt động
 
