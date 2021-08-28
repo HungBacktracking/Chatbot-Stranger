@@ -4,17 +4,17 @@
 > **Lưu ý**: Chatbot này được mình phát triển từ dự án Chatbot CNH của Nui và tự cải thiện thêm một vài tính năng nho nhỏ. Mọi người có thể xem qua dự án gốc ở link này [https://github.com/ngxson/chatbot-cnh]
 
 ### Tính năng
-<img src="https://https://hungbacktracking.github.io/facts.github.io/Readme/Trogiup.jpg" width="100%">
+<img src="https://hungbacktracking.github.io/facts.github.io/Readme/Trogiup.jpg" width="100%">
 Chatbot LQĐ có 1 vài tính năng thú vị như:
 
  - Ghép cặp người lạ, trong đó cho phép chọn giới tính người muốn gặp và được mở rộng về giới tính
-<img src="https://https://hungbacktracking.github.io/facts.github.io/Readme/Gender.jpg" width="100%">
+<img src="https://hungbacktracking.github.io/facts.github.io/Readme/Gender.jpg" width="100%">
  - Gửi ảnh chó/mèo bất kỳ khi gõ meow hoặc gauw
-<img src="https://https://hungbacktracking.github.io/facts.github.io/Readme/meow_gauw.jpg" width="100%">
+<img src="https://hungbacktracking.github.io/facts.github.io/Readme/meow_gauw.jpg" width="100%">
  - Random một fact về Trường LQĐ
-<img src="https://https://hungbacktracking.github.io/facts.github.io/Readme/fact.jpg" width="100%">
+<img src="https://hungbacktracking.github.io/facts.github.io/Readme/fact.jpg" width="100%">
  - Giới thiệu các câu lạc bộ
-<img src="https://https://hungbacktracking.github.io/facts.github.io/Readme/club.jpg" width="100%">
+<img src="https://hungbacktracking.github.io/facts.github.io/Readme/club.jpg" width="100%">
  - Có thể chat với bot(NLP) (chức năng này vẫn đang trong quá trình thực hiện)
  - Có giao diện cho admin quản lý
  - Thay đổi giao diện chọn giới tính giúp người dùng dễ dàng sử dụng hơn
