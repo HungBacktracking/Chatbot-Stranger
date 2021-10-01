@@ -1,5 +1,6 @@
 ---
 ### Lời nói đầu
+Đây là một chatbot cho phép bạn trò chuyện ẩn danh với người lạ trên nền tảng Facebook và chatbots Facebook Messenger. Là phiên bản mình tạo ra dành cho các bạn học sinh đang học tại các trường THPT TP Đà Nẵng. Mình đã xây dựng bằng Javascript (Node.js, Express.js) và MongoDB.
 
 <img src="https://hungbacktracking.github.io/facts.github.io/Readme/Trogiup.jpg" width="30%" >
 
