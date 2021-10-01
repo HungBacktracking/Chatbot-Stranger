@@ -1,9 +1,6 @@
 ---
 ### Lời nói đầu
 
-> **Lưu ý**: Chatbot này được mình phát triển từ dự án Chatbot CNH của Nui và tự cải thiện thêm một vài tính năng nho nhỏ. Mọi người có thể xem qua dự án gốc ở link này [https://github.com/ngxson/chatbot-cnh]
-
-### Tính năng
 <img src="https://hungbacktracking.github.io/facts.github.io/Readme/Trogiup.jpg" width="30%" >
 
 ### Chatbot LQĐ có các tính năng thú vị như:
@@ -45,5 +42,7 @@ Trong sơ đồ còn 1 vài phần chưa biểu diễn đc:
 * extension/cronjob.js: cronjob tự động kick người dùng khỏi hàng chờ nếu phải chờ quá lâu
 * dbmongo.js: tools để giao tiếp với MongoDB
 * dbcache.js: tools để giao tiếp với cache
+
+> **Lưu ý**: Chatbot này được mình phát triển từ dự án Chatbot CNH của Nui và tự cải thiện thêm một vài tính năng nho nhỏ. Mọi người có thể xem qua dự án gốc ở link này [https://github.com/ngxson/chatbot-cnh]
 
 ### 
