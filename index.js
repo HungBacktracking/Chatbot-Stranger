@@ -10,6 +10,7 @@ const app = express();
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 const xhub = require('express-x-hub');
+let  NKV = require('nk-vector');
 
 //custom
 const la = require('./custom/lang');
@@ -21,7 +22,9 @@ const gendertool = require('./gender');
 const facebook = require('./facebook');
 
 //extensions
+const improvement = require('./extension/improvement');
 const gifts = require('./extension/gifts');
+const bot = require('./extension/bot');
 const logger = require('./extension/logger');
 const admin = require('./extension/admin');
 const cronjob = require('./extension/cronjob');
@@ -111,10 +114,11 @@ app.post('/webhook/', function(req, res) {
 			tools.findInWaitRoom(mongo, sender, function(waitstate) {
 				tools.findPartnerChatRoom(mongo, sender, function(sender2, haveToReview, role, data) {
 					var command = "";
-					if (text.length < 20)
+					if (text.length < 60)
 						command = text.toLowerCase().replace(/ /g, '');
 
 					if (command == "ʬ") {
+						improvement.sendWelcome(sender);
 						sendButtonMsg(sender, la.FIRST_COME, true, true);
 						return;
 					}
@@ -122,27 +126,34 @@ app.post('/webhook/', function(req, res) {
 					//ko ở trong CR lẫn WR
 					if (!waitstate && sender2 == null) {
 						if (command === la.KEYWORD_BATDAU) {
-							gifts.sendGender(sender);
+							improvement.sendGender(sender);
 						} /*else if (command === la.KEYWORD_BATKI) {
 							gendertool.getGender(mongo, sender, function(genderid) {
 								findPair(sender, genderid);
 							}, facebook, token);
 						}*/ else if (command.startsWith(la.KEYWORD_GENDER)) {
 							gendertool.setGender(mongo, sender, command, genderWriteCallback);
+						} else if (command === la.KEYWORD_KETTHUC) {
+							sendButtonMsg(sender, la.KETTHUC_ERR_ALREADY, true, true);
 						} else if (command === la.KEYWORD_HELP) {
 							sendButtonMsg(sender, la.HELP_TXT, true, false);
 						} else if (command === la.KEYWORD_CAT) {
 							gifts.sendCatPic(sender, null, true);
 						} else if (command === la.KEYWORD_DOG) {
 							gifts.sendDogPic(sender, null, true);
-						} else if (command === la.KEYWORD_FACT) {
+						} /*else if (command === la.KEYWORD_MUSIC) {
+							gifts.sendMusic(sender, null, true);
+						}*/ else if (command === la.KEYWORD_FACT) {
 							gifts.sendFacts(sender, null, true);
 						} else if (command === la.KEYWORD_CLUB) {
 							gifts.sendClub(sender, null, true);
+							sendTextMessage(sender, la.CLUB_HELP);
 						} else if (command === la.KEYWORD_CLUB_2) {
 							gifts.sendClub_2(sender, null, true);
 						} else if (!event.read) {
-							sendButtonMsg(sender, la.HUONG_DAN, true, true);
+							//sendButtonMsg(sender, la.HUONG_DAN, true, true);
+							var txt=command;
+							bot.SendBotReply(sender, txt);
 						}
 					}
 
@@ -165,6 +176,7 @@ app.post('/webhook/', function(req, res) {
 							gifts.sendDogPic(sender, null, false);
 						} else if (command === la.KEYWORD_CLUB) {
 							gifts.sendClub(sender, null, false);
+							sendTextMessage(sender, la.CLUB_HELP);
 						} else if (command === la.KEYWORD_CLUB_2) {
 							gifts.sendClub_2(sender, null, false);
 						} else if (!event.read) {
@@ -174,7 +186,9 @@ app.post('/webhook/', function(req, res) {
 
 					//Đang vào chat
 					else if (!waitstate && sender2 != null) {
-						if (command === la.KEYWORD_KETTHUC) {
+						if (command === la.KEYWORD_KETTHUC){
+							improvement.askEndchat(sender);
+						} else if (command === la.KETTHUC_FINAL) {
 							processEndChat(sender, sender2);
 						} else if (command === la.KEYWORD_HELP) {
 							sendButtonMsg(sender, la.HELP_TXT, false, false);
@@ -190,6 +204,8 @@ app.post('/webhook/', function(req, res) {
 						} else if (command === la.KEYWORD_CLUB) {
 							sendMessage(sender, sender2, event.message);
 							gifts.sendClub(sender, sender2, false);
+							sendTextMessage(sender, la.CLUB_HELP);
+							sendTextMessage(sender2, la.CLUB_HELP);
 						} else if (command === la.KEYWORD_CLUB_2) {
 							sendMessage(sender, sender2, event.message);
 							gifts.sendClub_2(sender, sender2, false);
@@ -425,6 +441,18 @@ function initChatbot() {
 		console.log('running on port', app.get('port'))
 	})
 }
+
+function delay()
+{
+	for (let index=1;index<=1000000000;)
+		index++;
+}
+
+/*function SolveText(val)
+{
+	var txt=NKV.fast_build_chatbot(val);
+	return txt;
+}*/
 
 //if (co.DEV_ID != 0) sendTextMessage(co.DEV_ID, co.APP_NAME+' is up');
 

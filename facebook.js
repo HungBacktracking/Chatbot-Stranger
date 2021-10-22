@@ -45,7 +45,7 @@ exports.getFbData = function(accessToken, apiPath, callback) {
 
 exports.setupFBApi = function(request, token, report_link) {
 	request({
-		url: 'https://graph.facebook.com/v11.0/me/messenger_profile',
+		url: 'https://graph.facebook.com/v12.0/me/messenger_profile',
 		qs: {access_token:token},
 		method: 'POST',
 		json: {
@@ -55,7 +55,7 @@ exports.setupFBApi = function(request, token, report_link) {
 		}
 	}, function(error, response, body) {})
 	request({
-		url: 'https://graph.facebook.com/v2.6/me/thread_settings',
+		url: 'https://graph.facebook.com/v12.0/me/thread_settings',
 		qs: {access_token:token},
 		method: 'DELETE',
 		json: {
@@ -64,7 +64,7 @@ exports.setupFBApi = function(request, token, report_link) {
 		}
 	}, function(error, response, body) {console.log(response.body)})
   request({
-    url: 'https://graph.facebook.com/v11.0/me/messenger_profile',
+    url: 'https://graph.facebook.com/v12.0/me/messenger_profile',
     qs: {access_token:token},//co.FB_PAGE_ACCESS_TOKEN},
     method: 'POST',
     json: {
@@ -74,27 +74,12 @@ exports.setupFBApi = function(request, token, report_link) {
           "composer_input_disabled": false,
           "call_to_actions": [
           {
-            "title": "Một câu chuyện nhỏ của Lê",
-            "type": "postback",
-            "payload": la.KEYWORD_FACT,
-          },
-          {
-            "title": "Các CLB trường Lê Quý Đôn",
-            "type": "postback",
-            "payload": la.KEYWORD_CLUB,
-          },
-          {
-            "title": "Bắt đầu",
+            "title": "Bắt đầu kết nối ✨",
             "type": "postback",
             "payload": la.KEYWORD_BATDAU,
           },
           {
-            "title": "Kết thúc",
-            "type": "postback",
-            "payload": la.KEYWORD_KETTHUC,
-          },
-          {
-            "title": "Trợ giúp",
+            "title": "Hướng dẫn sử dụng",
             "type": "postback",
             "payload": la.KEYWORD_HELP,
           }
@@ -108,10 +93,6 @@ exports.setupFBApi = function(request, token, report_link) {
 exports.quickbtns = [
   {
     "content_type":"text",
-    "title":"Bắt đầu",
-    "payload":la.KEYWORD_BATDAU
-  },{
-    "content_type":"text",
     "title":"Club",
     "payload":la.KEYWORD_CLUB
   },{
@@ -120,16 +101,12 @@ exports.quickbtns = [
     "payload":la.KEYWORD_FACT
   },{
     "content_type":"text",
-    "title":"Meow",
+    "title":"🐈",
     "payload":la.KEYWORD_CAT
   },{
     "content_type":"text",
-    "title":"Gauw",
+    "title":"🦮",
     "payload":la.KEYWORD_DOG
-  },{
-    "content_type":"text",
-    "title":"Trợ giúp",
-    "payload":la.KEYWORD_HELP
   }
 ];
 
@@ -146,16 +123,12 @@ exports.quickbtns_mini = [
   },
   {
     "content_type":"text",
-    "title":"Meow",
+    "title":"🐈",
     "payload":la.KEYWORD_CAT
   },{
     "content_type":"text",
-    "title":"Gauw",
+    "title":"🦮",
     "payload":la.KEYWORD_DOG
-  },{
-    "content_type":"text",
-    "title":"Trợ giúp",
-    "payload":la.KEYWORD_HELP
   }
 ];
 
@@ -170,26 +143,26 @@ exports.quickbtns_club = [
 exports.quickbtns_gender = [
   {
     "content_type":"text",
-    "title":"Nam",
+    "title":"🧑🏻♂️Nam",
     "payload":KEYWORD_GENDER+'nam'
   },
   {
     "content_type":"text",
-    "title":"Nữ",
+    "title":"👩🏻♀️Nữ",
     "payload":KEYWORD_GENDER+'nu'
   },
   {
     "content_type":"text",
-    "title":"Gay",
-    "payload":KEYWORD_GENDER+'gay'
-  },{
-    "content_type":"text",
-    "title":"Les",
-    "payload":KEYWORD_GENDER+'les'
-  },{
-    "content_type":"text",
-    "title":"Bất kì",
+    "title":"💃🏻🕺🏻Bất kì",
     "payload":KEYWORD_GENDER+'all'
+  }
+];
+
+exports.quickbtns_end = [
+  {
+    "content_type":"text",
+    "title":"Kết thúc",
+    "payload":la.KETTHUC_FINAL
   }
 ];
 
@@ -202,7 +175,7 @@ var sendFacebookApi = function (sender, receiver, messageData, data, dontSendErr
 		}
 
 		request({
-			url: 'https://graph.facebook.com/v11.0/me/messages',
+			url: 'https://graph.facebook.com/v12.0/me/messages',
 			qs: {access_token:co.FB_PAGE_ACCESS_TOKEN},
 			method: 'POST',
 			json: {
@@ -231,7 +204,7 @@ var sendFacebookApi = function (sender, receiver, messageData, data, dontSendErr
 
 exports.sendSeenIndicator = function (receiver) {
   request({
-    url: 'https://graph.facebook.com/v11.0/me/messages',
+    url: 'https://graph.facebook.com/v12.0/me/messages',
     qs: {access_token:co.FB_PAGE_ACCESS_TOKEN},
     method: 'POST',
     json: {
