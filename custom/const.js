@@ -4,7 +4,7 @@ module.exports = {
 	//FACEBOOK TOKEN
 	FB_APP_SECRET : '516ba7e5a230b14479b48fbc14a34940',
 	FB_PAGE_VERIFY_TOKEN : 'backtracking', // đặt 1 mã bất kỳ
-	FB_PAGE_ACCESS_TOKEN : 'EAAMewLjZCkcoBAPps53U7Mw1L561fv0YPsqVA1j8PhIdVu4G7CJ333Tsl2CeSFy4oczDaIN7AkHRVzoX46b6mrlEiDAMdjGlskWD8BbkZBHv7EZBqjyCjcGVi8IT6hZBesDZCQVVrRPmwTjrZCSBmeMm2BzuPUhiZBLQVRZBU2MKamOc2CDQFGzc9dBoTdQ1GpKgqmAgK8eAeQZDZD',
+	FB_PAGE_ACCESS_TOKEN : 'EAAMewLjZCkcoBAEBlRD12dO8YsQSOfP3k4y8Wz0NQehUZAWXxMTjnwZBlgxOyk9hwhywgKVBtdyf4MueTC2U0e0eZBKpzjZAvZCLllDOwdDAQF73QQRfbSZAgVyFs5PxWFPW24Oboj1qHKSMtjZBTa4hae1bloVu7MgmZC7hOUYQdzzO4b9vLFxEwlI2aOZC5dIVllr7IGFpkZAOQZDZD',
 
 	//HEROKU STUFFS
 	APP_NAME : 'chatbotbacktracktesting',
@@ -26,7 +26,7 @@ module.exports = {
 	//OTHERS
 	//(không bắt buộc) Cách bật tính năng hiện đã xem (seen): https://goo.gl/xjw9nP
 	MAX_PEOPLE_WAITROOM : 100, //Số người tối đa trong phòng chờ
-	MAX_WAIT_TIME_MINUTES : 0, //Số phút tối đa 1 người đc phép trong phòng chờ.
+	MAX_WAIT_TIME_MINUTES : 60, //Số phút tối đa 1 người đc phép trong phòng chờ.
 	                            //Đặt 0 để cho phép đợi bao lâu cũng đc
 
 	//ADMIN UI

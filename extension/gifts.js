@@ -1,8 +1,7 @@
-const la = require('../custom/lang');
+const facebook = require('../facebook');
 var MAX_CAT_IMG = 10229;
 var MAX_DOG_IMG = 5250;
 var MAX_FACT = 117;
-var FACT_CHECK = []
 var FACT = [
 	"Giáo viên ở Lê Quý Đôn rất rất rất xịn, đều có trình độ từ bậc thạc sĩ trở lên cùng với độ đáng yêu không bé hơn bậc siêu cấp.",
 	"Chắc hiếm ai học Hoá thầy Tiến mà không bị gọi là “thằng bất hiếu”, không bị khẽ tay khi không chú ý hay chưa được nghe thầy hát sau mỗi tiết học, thầy có máu văn nghệ lắm, dạy xong nhiều khi sẽ bonus mở show văn nghệ, có loa kèm mic hẳn hoi.",
@@ -51,7 +50,6 @@ var FACT = [
 	"Hãy thử trốn học, nhưng đừng trốn học lúc cần trốn học nhất.",
 	"Thích một người, tỏ tình, và quen cậu ấy.\nHãy có một mối tình màu Xanh."
 ]
-const facebook = require('../facebook');
 
 function sendClub(id, id2, notInChat) 
 {
@@ -332,13 +330,25 @@ function sendClub_2(id, id2, notInChat)
 	if (id2 != null) facebook.sendFacebookApi(id2, id2, data, {});
 }
 
-function sendGender(id) 
+/*function sendMusic(id, id2, notInChat) 
 {
-	var data={ "text": la.BATDAU_GENDER}
+	data=
+	{
+		"attachment":
+		{
+			"type":"video",
+			"payload":
+			{
+				"url":'https://www.24h.com.vn/31944424-d229-488b-976d-6b594e048f8f'
+			} 
+		}
+	}
 	
-	data["quick_replies"] = facebook.quickbtns_gender;
+	if (notInChat) data["quick_replies"] = facebook.quickbtns;
+	else data["quick_replies"] = facebook.quickbtns_mini;
 	facebook.sendFacebookApi(id, id, data, {});
-}
+	if (id2 != null) facebook.sendFacebookApi(id2, id2, data, {});
+}*/
 
 function sendFacts(id, id2, notInChat) 
 {
@@ -432,7 +442,6 @@ function solveFactData(val)
 module.exports = {
 	sendClub: sendClub,
 	sendClub_2: sendClub_2,
-	sendGender: sendGender,
 	sendFacts: sendFacts,
 	sendCatPic: sendCatPic,
 	sendDogPic: sendDogPic,

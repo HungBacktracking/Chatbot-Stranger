@@ -9,7 +9,7 @@ var request = require('request');
 
 var sendBroadcast = function(access_token, text, callback) {
 	request({
-		url: 'https://graph.facebook.com/v2.11/me/message_creatives?access_token='+access_token,
+		url: 'https://graph.facebook.com/v12.0/me/message_creatives?access_token='+access_token,
 		method: 'POST',
 		json: {
 			"messages": [{
@@ -39,7 +39,7 @@ var send = function(access_token, message,custom_label_id) {
             };
             if(custom_label_id)data.custom_label_id = custom_label_id;
             request({
-		url: 'https://graph.facebook.com/v2.11/me/broadcast_messages?access_token='+access_token,
+		url: 'https://graph.facebook.com/v12.0/me/broadcast_messages?access_token='+access_token,
 		method: 'POST',
 		json: data
             },(err, res,body)=> {
@@ -65,7 +65,7 @@ var send = function(access_token, message,custom_label_id) {
 var getCreativeId = function(access_token,message){
     var promise = new Promise((resolve,reject)=>{
         request({
-		url: 'https://graph.facebook.com/v2.11/me/message_creatives?access_token='+access_token,
+		url: 'https://graph.facebook.com/v12.0/me/message_creatives?access_token='+access_token,
 		method: 'POST',
 		json: {
 			"messages": [message]
@@ -89,7 +89,7 @@ var getCreativeId = function(access_token,message){
 function handleCreativeId(access_token, cid, callback) {
         
 	request({
-		url: 'https://graph.facebook.com/v2.11/me/broadcast_messages?access_token='+access_token,
+		url: 'https://graph.facebook.com/v12.0/me/broadcast_messages?access_token='+access_token,
 		method: 'POST',
 		json: {
 			"message_creative_id": cid
