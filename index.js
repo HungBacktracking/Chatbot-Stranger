@@ -10,7 +10,6 @@ const app = express();
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 const xhub = require('express-x-hub');
-let  NKV = require('nk-vector');
 
 //custom
 const la = require('./custom/lang');
@@ -126,13 +125,11 @@ app.post('/webhook/', function(req, res) {
 					//ko ở trong CR lẫn WR
 					if (!waitstate && sender2 == null) {
 						if (command === la.KEYWORD_BATDAU) {
-							improvement.sendGender(sender);
-						} /*else if (command === la.KEYWORD_BATKI) {
-							gendertool.getGender(mongo, sender, function(genderid) {
-								findPair(sender, genderid);
-							}, facebook, token);
-						}*/ else if (command.startsWith(la.KEYWORD_GENDER)) {
+							improvement.startChatting(sender);
+						} else if (command.startsWith(la.KEYWORD_GENDER)) {
 							gendertool.setGender(mongo, sender, command, genderWriteCallback);
+						} else if (command.startsWith(la.KEYWORD_ASK_GENDER)){
+							improvement.setupGender(sender, command);
 						} else if (command === la.KEYWORD_KETTHUC) {
 							sendButtonMsg(sender, la.KETTHUC_ERR_ALREADY, true, true);
 						} else if (command === la.KEYWORD_HELP) {
@@ -146,8 +143,8 @@ app.post('/webhook/', function(req, res) {
 						}*/ else if (command === la.KEYWORD_FACT) {
 							gifts.sendFacts(sender, null, true);
 						} else if (command === la.KEYWORD_CLUB) {
-							gifts.sendClub(sender, null, true);
 							sendTextMessage(sender, la.CLUB_HELP);
+							gifts.sendClub(sender, null, true);
 						} else if (command === la.KEYWORD_CLUB_2) {
 							gifts.sendClub_2(sender, null, true);
 						} else if (!event.read) {
@@ -175,8 +172,8 @@ app.post('/webhook/', function(req, res) {
 						} else if (command === la.KEYWORD_DOG) {
 							gifts.sendDogPic(sender, null, false);
 						} else if (command === la.KEYWORD_CLUB) {
-							gifts.sendClub(sender, null, false);
 							sendTextMessage(sender, la.CLUB_HELP);
+							gifts.sendClub(sender, null, false);
 						} else if (command === la.KEYWORD_CLUB_2) {
 							gifts.sendClub_2(sender, null, false);
 						} else if (!event.read) {
@@ -203,9 +200,9 @@ app.post('/webhook/', function(req, res) {
 							gifts.sendFacts(sender, sender2, false);
 						} else if (command === la.KEYWORD_CLUB) {
 							sendMessage(sender, sender2, event.message);
-							gifts.sendClub(sender, sender2, false);
 							sendTextMessage(sender, la.CLUB_HELP);
 							sendTextMessage(sender2, la.CLUB_HELP);
+							gifts.sendClub(sender, sender2, false);
 						} else if (command === la.KEYWORD_CLUB_2) {
 							sendMessage(sender, sender2, event.message);
 							gifts.sendClub_2(sender, sender2, false);
@@ -249,7 +246,10 @@ function genderWriteCallback(ret, id) {
 				sendTextMessage(id, la.GENDER_WRITE_OK + la.GENDER_ARR[genderid] + la.GENDER_WRITE_WARN);
 				sendButtonMsg(id, la.HUONG_DAN, true, true);
 			}, facebook, token);
-		case 0:
+		case 1:
+			findPair(id, ret);
+			break;
+		case 2:
 			findPair(id, ret);
 			break;
 		default:
@@ -266,7 +266,7 @@ function findPair(id, mygender) {
 		function processWaitRoom(i) {
 			if (i >= list.length) {
 				// nếu ko có ai phù hợp để ghép đôi, xin mời vào ngồi chờ
-				if (mygender == 0) sendTextMessage(id, la.BATDAU_WARN_GENDER);
+				if (mygender == 1 || mygender == 2) sendTextMessage(id, la.BATDAU_WARN_GENDER);
 				tools.writeToWaitRoom(mongo, id, mygender);
 				sendTextMessage(id, la.BATDAU_OKAY);
 				return;
@@ -278,14 +278,24 @@ function findPair(id, mygender) {
 				//nếu có thì next
 				processWaitRoom(i + 1);
 			} else {
-				var isPreferedGender = (mygender == 0 && target_gender == 0) ||
-					(mygender == 1 && target_gender == 2) ||
-					(mygender == 2 && target_gender == 1) ||
+				var isPreferedGender = (mygender == 1 && target_gender == 3) ||
+					(mygender == 1 && target_gender == 5) ||
+					(mygender == 2 && target_gender == 4) ||
+					(mygender == 2 && target_gender == 6) ||
+					(mygender == 3 && target_gender == 1) ||
 					(mygender == 3 && target_gender == 3) ||
-					(mygender == 4 && target_gender == 4);
-				if ((mygender == 0 && target_gender == 0)) connect2People(id, target, isPreferedGender);
-				else if (list.length > co.MAX_PEOPLE_WAITROOM ||
-					dontChooseGender((mygender == 0 || target_gender == 0))) {
+					(mygender == 4 && target_gender == 2) ||
+					(mygender == 4 && target_gender == 5) ||
+					(mygender == 5 && target_gender == 1) ||
+					(mygender == 5 && target_gender == 4) ||
+					(mygender == 6 && target_gender == 2) ||
+					(mygender == 6 && target_gender == 6) ||
+					(mygender == 1 && target_gender == 1) ||
+					(mygender == 2 && target_gender == 2) ||
+					(mygender == 1 && target_gender == 2) ||
+					(mygender == 2 && target_gender == 1) ;
+				if (isPreferedGender) connect2People(id, target, isPreferedGender);
+				else if (list.length > co.MAX_PEOPLE_WAITROOM) {
 					// kết nối nếu có quá nhiều người trong waitroom
 					// hoặc là ko đc kén chọn gender
 					connect2People(id, target, isPreferedGender);
@@ -334,12 +344,12 @@ var sendButtonMsg = function(sender, txt, showStartBtn, showHelpBtn, showRpBtn =
 	if (showStartBtn) btns.push({
 		"type": "postback",
 		"title": "Bắt đầu chat",
-		"payload": "batdau"
+		"payload": la.KEYWORD_BATDAU
 	});
 	if (showHelpBtn) btns.push({
 		"type": "postback",
 		"title": "Xem trợ giúp",
-		"payload": "trogiup"
+		"payload": la.KEYWORD_HELP
 	});
 	else btns.push({
 		"type": "web_url",
@@ -447,12 +457,6 @@ function delay()
 	for (let index=1;index<=1000000000;)
 		index++;
 }
-
-/*function SolveText(val)
-{
-	var txt=NKV.fast_build_chatbot(val);
-	return txt;
-}*/
 
 //if (co.DEV_ID != 0) sendTextMessage(co.DEV_ID, co.APP_NAME+' is up');
 

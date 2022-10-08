@@ -140,7 +140,7 @@ exports.quickbtns_club = [
   }
 ];
 
-exports.quickbtns_gender = [
+exports.quickbtns_chooseGender = [
   {
     "content_type":"text",
     "title":"🧑🏻♂️Nam",
@@ -155,6 +155,19 @@ exports.quickbtns_gender = [
     "content_type":"text",
     "title":"💃🏻🕺🏻Bất kì",
     "payload":KEYWORD_GENDER+'all'
+  }
+];
+
+exports.quickbtns_askGender = [
+  {
+    "content_type":"text",
+    "title":"🧑🏻♂️Nam",
+    "payload":la.KEYWORD_ASK_GENDER+'male'
+  },
+  {
+    "content_type":"text",
+    "title":"👩🏻♀️Nữ",
+    "payload":la.KEYWORD_ASK_GENDER+'female'
   }
 ];
 
