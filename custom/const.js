@@ -2,13 +2,13 @@ module.exports = {
 	DEBUG : false,
 
 	//FACEBOOK TOKEN
-	FB_APP_SECRET : '516ba7e5a230b14479b48fbc14a34940',
-	FB_PAGE_VERIFY_TOKEN : 'backtracking', // đặt 1 mã bất kỳ
-	FB_PAGE_ACCESS_TOKEN : 'EAAMewLjZCkcoBAEBlRD12dO8YsQSOfP3k4y8Wz0NQehUZAWXxMTjnwZBlgxOyk9hwhywgKVBtdyf4MueTC2U0e0eZBKpzjZAvZCLllDOwdDAQF73QQRfbSZAgVyFs5PxWFPW24Oboj1qHKSMtjZBTa4hae1bloVu7MgmZC7hOUYQdzzO4b9vLFxEwlI2aOZC5dIVllr7IGFpkZAOQZDZD',
+	FB_APP_SECRET : '',
+	FB_PAGE_VERIFY_TOKEN : '', // đặt 1 mã bất kỳ
+	FB_PAGE_ACCESS_TOKEN : '',
 
 	//HEROKU STUFFS
-	APP_NAME : 'chatbotbacktracktesting',
-	HEROKU_API_KEY : 'ee3bb108-3227-4f45-a94d-fae7c71cf9b2',
+	APP_NAME : '',
+	HEROKU_API_KEY : '',
 	KEEP_APP_ALWAYS_ON : false, // đổi thành true nếu đã thêm credit card vào heroku
 
 	//MONGODB SETUP
