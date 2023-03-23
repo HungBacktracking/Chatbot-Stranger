@@ -2,21 +2,31 @@
 ### Lời nói đầu
 Đây là một chatbot cho phép bạn trò chuyện ẩn danh với người lạ trên nền tảng Facebook và chatbots Facebook Messenger. Là phiên bản mình tạo ra dành cho các bạn học sinh đang học tại các trường THPT TP Đà Nẵng. Mình đã xây dựng bằng Javascript (Node.js, Express.js) và MongoDB.
 
-<img src="https://hungbacktracking.github.io/facts.github.io/Readme/Trogiup.jpg" width="30%" >
+<p align="center">
+  <img src="https://hungbacktracking.github.io/facts.github.io/Readme/Trogiup.jpg" width="30%" >
+</p>
 
 ### Chatbot LQĐ có các tính năng thú vị như:
 
  - Ghép cặp người lạ, trong đó cho phép chọn giới tính người muốn gặp và được mở rộng về giới tính
-<img src="https://hungbacktracking.github.io/facts.github.io/Readme/Gender.jpg" width="30%">
+<p align="center">
+  <img src="https://hungbacktracking.github.io/facts.github.io/Readme/Gender.jpg" width="30%">
+</p>
 
  - Gửi ảnh chó/mèo bất kỳ khi gõ meow hoặc gauw
-<img src="https://hungbacktracking.github.io/facts.github.io/Readme/meow_gauw.jpg" width="30%">
+<p align="center">
+  <img src="https://hungbacktracking.github.io/facts.github.io/Readme/meow_gauw.jpg" width="30%">
+</p>
 
  - Random một fact về Trường LQĐ
-<img src="https://hungbacktracking.github.io/facts.github.io/Readme/fact.jpg" width="30%">
+<p align="center">
+ <img src="https://hungbacktracking.github.io/facts.github.io/Readme/fact.jpg" width="30%">
+</p>
 
  - Giới thiệu các câu lạc bộ
-<img src="https://hungbacktracking.github.io/facts.github.io/Readme/club.jpg" width="30%">
+<p align="center">
+ <img src="https://hungbacktracking.github.io/facts.github.io/Readme/club.jpg" width="30%">
+</p>
 
  - Có thể chat với bot(NLP) (chức năng này vẫn đang trong quá trình thực hiện)
  - Có giao diện cho admin quản lý
