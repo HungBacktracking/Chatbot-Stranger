@@ -30,5 +30,5 @@ module.exports = {
 	                            //Đặt 0 để cho phép đợi bao lâu cũng đc
 
 	//ADMIN UI
-	ADMIN_PASSWORD : "backtracking" //password để login vào trang admin
+	ADMIN_PASSWORD : "" //password để login vào trang admin
 };
